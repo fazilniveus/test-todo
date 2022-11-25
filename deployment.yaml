@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: knote
-          image: gcr.io/tech-rnd-project/faz-todo:tagversion
+          image: gcr.io/tech-rnd-project/div-todo:tagversion
           ports:
             - containerPort: 3000
