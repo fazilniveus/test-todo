@@ -40,7 +40,7 @@ pipeline {
  				  sh 'sudo apt-get install pack-cli'
 			   
 				  sh 'pack build app --builder paketobuildpacks/builder:full'
-			    	  sh "sudo docker tag app:latest gcr.io/tech-rnd-project/faz-todo:${env.BUILD_ID}"
+			    	  sh "sudo docker tag app:latest gcr.io/tech-rnd-project/div-todo:${env.BUILD_ID}"
 			    
 		    }
 	    }
@@ -50,7 +50,7 @@ pipeline {
 			    script {
 				    echo "Push Docker Image"
 				        sh 'gcloud auth configure-docker'
-				        sh "sudo docker push gcr.io/tech-rnd-project/faz-todo:${env.BUILD_ID}"
+				        sh "sudo docker push gcr.io/tech-rnd-project/div-todo:${env.BUILD_ID}"
 				    
 					sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
 
